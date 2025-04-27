@@ -1,14 +1,20 @@
 
 let myLeads = []
 const inputEl = document.getElementById("input-el")
-let inputBtn = document.getElementById("input-btn")
+const inputBtn = document.getElementById("input-btn")
+const ulEl = document.getElementById("ul-el")
 
 inputBtn.addEventListener("click", function () {
-  myLeads.push(inputEl.vaule)
-  console.log(myLeads)
-
-  for (let i = 0; i < myLeads.length; i++) {
-    console.log(myLeads[i])
-  }
+  myLeads.push(inputEl.value)
+  inputEl.value = ""
+  renderLeads()
 })
+
+
+function renderLeads() {
+  ulEl.textContent = ""
+  for (let i = 0; i < myLeads.length; i++) {
+    ulEl.textContent += myLeads[i] + "\n"
+  }
+}
 
