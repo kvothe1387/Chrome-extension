@@ -1,4 +1,3 @@
-
 let myLeads = []
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
@@ -10,11 +9,10 @@ inputBtn.addEventListener("click", function () {
   renderLeads()
 })
 
-
 function renderLeads() {
-  ulEl.textContent = ""
+  let listItems = ""
   for (let i = 0; i < myLeads.length; i++) {
-    ulEl.textContent += myLeads[i] + "\n"
+    listItems += "<li>" + myLeads[i] + "</li>"
   }
-}
-
+  ulEl.innerHTML = listItems
+} 
